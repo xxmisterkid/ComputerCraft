@@ -1,0 +1,27 @@
+local function printUsage()
+  print("Usage:\nupdate <filename>")
+end 
+local arg1 = ...
+if arg1 == nil then
+  printUsage()
+  return
+end
+-- Searches all sides for a wireless modem
+local sModemSide
+for i, sSide in ipairs(rs.getSides()) do
+  if peripheral.getType(sSide) == "modem" then
+    sModemSide = sSide
+    rednet.open(sModemSide)
+  end
+end
+if sModemSide == nil then
+  print("A modem is required to run this program.")
+  return
+end
+local file = fs.open(shell.resolveProgram(arg1), "r")
+rednet.broadcast("upload", "ftp")
+print("Uploading", arg1, "to all ftp servers.")
+rednet.broadcast(shell.resolveProgram(arg1), "ftp")
+rednet.broadcast(file.readAll(), "ftp")
+file.close()
+print("File uploaded.")

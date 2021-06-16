@@ -1,0 +1,42 @@
+--MSFU--
+1 Advanced Circuit
+1 MFE
+1 Advanced Machine Casing
+6 Lapotron Crystal
+	--Lapotron Crystal--
+	6 Lapis Lazuli Dust
+	2 Advancesd Circuits
+		--Advanced Circuits--
+		4 Redstone
+		2 Lapis Lazuli
+		2 Glowstone Dust
+		1 Electric Circuit
+	1 Energy Crystal
+
+--Advanced Circuit--
+4 Redstone
+2 Lapis Lazuli
+2 Glowstone
+1 Electric Circuit
+
+	--Electric Circuit--
+	6 Insulated Copper Cables
+	2 Redstone
+	1 Iron Plate
+
+--MFE--
+4 2x Insulated Gold Cables
+4 Energy Crystals
+	--Energy Crystal--
+	5 Redstone
+	4 Diamond Dust
+1 Basic Machine Casing
+	--Basic Machine Casing--
+	8 Iron Plates
+
+
+--Advanced Machine Casing--
+4 Steel Plate
+2 Advanced Alloy
+2 Carbon Plate
+1 Basic Machine Casing

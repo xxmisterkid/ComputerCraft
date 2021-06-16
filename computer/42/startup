@@ -1,0 +1,2 @@
+shell.setDir("/programs/")
+shell.run("bg coal")

@@ -1,0 +1,6 @@
+shell.exit()
+sleep(0.05)
+shell.run("/rom/programs/exit")
+sleep(0.05)
+print("This should not display.")
+return

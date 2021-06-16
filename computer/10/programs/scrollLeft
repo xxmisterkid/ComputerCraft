@@ -1,0 +1,24 @@
+local x = 1
+local y = 1
+mon = peripheral.wrap("monitor_2")
+mon.setTextScale(2)
+mon.setTextColor(colors.purple)
+xres, yres = mon.getSize()
+local function center(text)
+  local x = math.floor(((xres-string.len(text))/2)+1)
+  mon.setCursorPos(x,y)
+  mon.write(text)
+  print(yres, x)
+end
+mon.clear()
+center("owo")
+while true do
+  for y=1, yres-1 do
+    mon.scroll(-1)
+    sleep(0.1)
+  end
+  for y=1, yres-1 do
+    mon.scroll(1)
+    sleep(0.1)
+  end
+end

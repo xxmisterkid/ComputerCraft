@@ -1,0 +1,6 @@
+shell.run("bg gps host 212 63 161")
+shell.run("bg repeat")
+shell.setDir("/programs")
+shell.run("bg /programs/ftpserver")
+shell.run("/programs/.label")
+shell.run("/programs/.freespace")

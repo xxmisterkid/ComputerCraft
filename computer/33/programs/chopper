@@ -1,0 +1,116 @@
+-- Variable initialization
+success, data = ""
+saplingcount = 0
+currentheight = 0
+-- Function to check all inventory slots for saplings, then place a sapling
+local function placesapling()
+  saplingcount = 0
+  for i = 1, 16 do
+    turtle.select(i)
+    local data = turtle.getItemDetail()
+    if data and data.name == "minecraft:sapling" then
+      turtle.place()
+      saplingcount = saplingcount + turtle.getItemCount()
+    end
+  end
+  if saplingcount == 0 then
+    print("Out of saplings!")
+  end
+end
+-- Function for chopping down trees
+local function choptree()
+  while data and data.name == "minecraft:log" do
+    turtle.dig()
+    turtle.digUp()
+    turtle.up()
+    currentheight = currentheight + 1
+    if turtle.detect() then
+      success, data = turtle.inspect()
+    -- If there is no block in front of the turtle, data will be set to nil, to break the loop
+    else data = nil
+    end
+  end
+end
+term.clear()
+term.setCursorPos(1,1)
+-- Prompts the user for the farm dimensions
+print("How long would you like to make the wood farm?")
+local l = tonumber(read())
+print("How wide would you like to make the wood farm?\nNote: Even numbers will be rounded down to the make it odd.")
+local w = tonumber(read())
+-- If width is even, subtract 1 to make it odd, since the rows of saplings need 1 block of space.
+if (w % 2 == 0) then
+  w = w-1
+end
+while true do
+  -- Checks if there is a chest in front of the turtle, and outputs everything except saplings if there is a chest
+  if turtle.detect() then
+    local success, data = turtle.inspect()
+    if data and data.name == "minecraft:chest" then
+      for i = 1, 16 do
+        turtle.select(i)
+        local data = turtle.getItemDetail()
+        if data and data.name ~= "minecraft:sapling" then
+          turtle.drop()
+        end
+      end
+    end
+  end
+  -- Checks if there is a chest below, and grabs saplings
+  if turtle.detectDown() then
+    local success, data = turtle.inspectDown()
+    if data and data.name == "minecraft:chest" then
+      if turtle.suckDown() then
+        print("Refilled saplings")
+      else
+        print("Chest out of saplings!")
+      end
+    end
+  end
+  -- Main loop that runs until the turtle reaches the final row.
+  for i = 1, w, 2 do
+    -- Sub loop that runs until the end of the row.
+    for i = 1, l do
+    turtle.turnRight()
+    turtle.forward()
+    turtle.turnLeft()
+      -- Checks if a block is in front of the turtle, and if there is a log, chops the tree down.
+      if turtle.detect() then
+        success, data = turtle.inspect()
+        choptree()
+        -- Digs down while descending, in case of new leaves from a tree.
+        for i = 1, currentheight do
+          turtle.digDown()
+          turtle.down()
+        end
+        currentheight = 0
+        -- Places a sapling after descending.
+        if not turtle.detect() then
+          placesapling()
+        end
+      else
+        -- Places a sapling if no block is on the ground.
+        placesapling()
+      end
+    end
+    -- Returns to start of row
+    turtle.turnRight()
+    for i = 1, l do
+      turtle.back()
+    end
+    -- If there are no more rows to check, turtle will return to the chest and deposit all wood.
+    if i == w then
+      turtle.turnLeft()
+      for i = 1, w-1 do
+        turtle.forward()
+      end
+    -- Output wood to chest
+    -- Sets i back to 0 so program will loop
+    -- If there are still more rows to check, turtle will move to the next row.
+    else
+      turtle.turnLeft()
+      turtle.back()
+      turtle.back()
+    end
+  end
+end

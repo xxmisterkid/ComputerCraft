@@ -1,0 +1,9 @@
+local i = 0
+for i = 1, 5 do
+	turtle.forward()
+	turtle.turnLeft()
+	turtle.forward()
+	turtle.turnRight()
+	turtle.forward()
+end
+print(i)

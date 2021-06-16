@@ -1,0 +1,29 @@
+while true do
+  input = read()
+  if input == "on" then
+    term.clear()
+    term.setCursorPos(1,1)
+    redstone.setOutput("back", false)
+    term.setBackgroundColor(colors.black)
+    term.setTextColor(colors.blue)
+    print("Turned Massfabricator [On] :D")
+    input = nil
+  elseif input == "off" then
+    term.clear()
+    term.setCursorPos(1,1)
+    term.setBackgroundColor(colors.black)
+    term.setTextColor(colors.green)
+    redstone.setOutput("back", true)
+    print("Turned Masfabricator [Off] :C")
+    input = nil
+  end
+end
+
+--while true do
+--  ID, message = rednet.receive("mass")
+--  if message == "on" then
+--    redstone.setOutput("back", false)
+--  elseif message == "off" then
+--    redstone.setOutput("back", true)
+--  end
+--end

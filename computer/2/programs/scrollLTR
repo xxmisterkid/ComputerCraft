@@ -1,0 +1,22 @@
+x = 1
+y = 2
+
+for m,v in pairs(rs.getSides()) do
+  if peripheral.getType(v) == "monitor" then
+    mon = peripheral.wrap(v)
+    mon.clear()
+    mon.setCursorPos(x,y)
+    mon.setTextScale(4)
+    mon.setTextColor(colors.purple)
+    break
+  end
+end
+xres, yres = mon.getSize()
+while true do
+  for x=-4, xres, 1 do
+    mon.setCursorPos(x,y)
+    mon.clear()
+    mon.write("Droud")
+    sleep(0.1)
+  end
+end

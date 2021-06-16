@@ -1,0 +1,4 @@
+shell.run("/startfiles/label")
+shell.run("bg /startfiles/sshserver")
+shell.run("bg /startfiles/ftpserver")
+shell.run("bg /startfiles/gpslocations")

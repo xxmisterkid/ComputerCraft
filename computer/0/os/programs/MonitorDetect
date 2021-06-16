@@ -1,0 +1,14 @@
+local sides = { "top", "bottom", "left", "right", "front", "back" }
+
+for i = 1, #sides do
+  mon = peripheral.wrap(sides[1])
+  if mon then
+    side = sides[i]
+    break
+  end
+end
+
+mon.clear()
+mon.setCursorPos(1,1)
+mon.setTextColor(colors.lime)
+print(sides[i])

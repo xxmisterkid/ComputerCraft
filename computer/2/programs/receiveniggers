@@ -1,0 +1,6 @@
+rednet.open("back")
+print("Listening for messages")
+id,message = rednet.receive()
+print("Message received!")
+textutils.slowPrint(message)
+rednet.close("back")

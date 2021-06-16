@@ -1,0 +1,33 @@
+turtle.select(16)
+c = math.floor(turtle.getItemCount()/9)
+
+for i = 1, 3 do
+  turtle.select(16)
+  turtle.transferTo(i, c)
+  if turtle.getItemCount(i) > c then
+    turtle.select(i)
+    turtle.transferTo(13, turtle.getItemCount(i)-c)
+  end
+end
+for i = 5, 7 do
+  turtle.select(16)
+  turtle.transferTo(i, c)
+  if turtle.getItemCount(i) > c then
+    turtle.select(i)
+    turtle.transferTo(14, turtle.getItemCount(i)-c)
+  end
+end
+for i = 9, 11 do
+  turtle.select(16)
+  turtle.transferTo(i, c)
+  if turtle.getItemCount(i) > c then
+    turtle.select(i)
+    turtle.transferTo(15, turtle.getItemCount(i)-c)
+  end
+end
+for i = 13, 16 do
+  turtle.select(i)
+  turtle.drop()
+end
+turtle.craft()
+turtle.drop()

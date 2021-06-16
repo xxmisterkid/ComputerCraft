@@ -1,0 +1,45 @@
+local redstone = 0
+local electriccircuit = 0
+local glowstonedust = 0
+local lapis = 0
+local icoppercable = 0
+local ironplate = 0
+
+if electriccircuit then
+	icoppercable = icoppercable + 6
+	redstone =  redstone + 2
+	ironplate =  ironplate + 1
+else
+	print("Failed to receive Electric Circuit")
+end
+
+if redstone then
+	redstone = redstone + 4
+else
+	print("Failed to receive Redstone")
+end
+
+
+if glowstonedust then
+	glowstonedust = glowstonedust + 2
+else
+	print("Failed to receive Glowstone Dust")
+end
+
+if lapis then
+	lapis = lapis + 2
+else
+	print("Failed to receive Lapis Lazuili")
+end
+
+print(ironplate, "Iron Plates")
+print(redstone, "Redstone")
+print(icoppercable, "Insulated Copper Cables")
+print(lapis, "Lapis Lazuili")
+print(glowstonedust, "Glowstone Dust")
+
+---Advanced Electric Circuit---
+--4 Redstone
+--2 Lapis Lazuili
+--2 Glowstone Dust
+--1 Electric Circuit

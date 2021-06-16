@@ -1,0 +1,21 @@
+while true do
+  turtle.select(1)
+  if turtle.getItemCount() >= 9 then
+    c = turtle.getItemCount()/9
+    for i = 2, 3 do
+      turtle.transferTo(i, c)
+    end
+    for i = 5, 7 do
+      turtle.transferTo(i, c)
+    end
+    for i = 9, 11 do
+      turtle.transferTo(i, c)
+    end
+    turtle.select(16)
+    turtle.craft()
+    turtle.turnLeft()
+    turtle.drop()
+    turtle.turnRight()
+  end
+  sleep(0.1)
+end

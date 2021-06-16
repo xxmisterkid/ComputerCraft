@@ -1,0 +1,7 @@
+mon = peripheral.wrap("top")
+mon.setCursorPos(1,1)
+mon.clear()
+a = "Ball"
+b = "sack"
+mon.write(a, b)
+print(a, b)

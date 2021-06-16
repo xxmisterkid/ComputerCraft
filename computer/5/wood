@@ -1,0 +1,45 @@
+local success, data
+
+function digUp()
+ turtle.digUp()
+	turtle.dig()
+	turtle.up()
+end
+
+function down()
+	 while not turtle.detectDown() do
+   turtle.down()
+ 	end
+end
+
+function place()
+  if turtle.detectDown() then
+    turtle.turnRight()
+    turtle.turnRight()
+    turtle.select(16)
+    turtle.place()
+    turtle.turnLeft()
+    turtle.turnLeft()
+  end
+end
+
+function forward()
+  turtle.forward()
+  sleep(0.05)
+end
+
+while true do
+  if turtle.detect() then
+    success, data = turtle.inspect()
+    if data.name == "minecraft:log" then
+      digUp()
+    else
+      down()
+      sleep(0.05)
+      forward()
+      place()
+    end
+  end
+end
+
+

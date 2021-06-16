@@ -1,0 +1,29 @@
+x = 1
+y = 1
+colornum = 6
+for m,v in pairs(rs.getSides()) do
+  if peripheral.getType(v) == "monitor" then
+    mon = peripheral.wrap(v)
+    mon.clear()
+    mon.setCursorPos(x,y)
+    mon.setTextScale(4)
+    break
+  end
+end
+xres, yres = mon.getSize()
+while true do
+  for x=xres+1, -3, -1 do
+    if colornum == 1 then mon.setTextColor(colors.red) end
+    if colornum == 2 then mon.setTextColor(colors.orange) end
+    if colornum == 3 then mon.setTextColor(colors.yellow) end
+    if colornum == 4 then mon.setTextColor(colors.lime) end
+    if colornum == 5 then mon.setTextColor(colors.blue) end
+    if colornum == 6 then mon.setTextColor(colors.purple) end
+    mon.setCursorPos(x,y)
+    mon.clear()
+    mon.write("Bert")
+    colornum = colornum + 1
+    if colornum == 7 then colornum = 1 end
+    sleep(.1)
+  end
+end

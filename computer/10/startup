@@ -1,0 +1,8 @@
+shell.setDir("/programs")
+shell.run("bg /programs/ftpserver")
+shell.run("bg /programs/scrollTop")
+shell.run("bg /programs/scrollLeft")
+shell.run("bg /programs/scrollRight")
+shell.run("/programs/gpson")
+shell.run("/programs/.label")
+shell.run("/programs/.freespace")

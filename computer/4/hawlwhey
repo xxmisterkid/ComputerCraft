@@ -1,0 +1,4 @@
+while not turtle.detect() do
+  turtle.forward()
+end
+shell.run("control")

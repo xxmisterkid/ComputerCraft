@@ -1,0 +1,5 @@
+shell.run("bg /programs/sshserver")
+shell.run("bg /programs/lock")
+shell.run("/programs/label")
+shell.run("bg /programs/ftpserver")
+

@@ -1,0 +1,46 @@
+mon = peripheral.wrap("top")
+rednet.open("bottom")
+mon.clear()
+mon.setTextScale(1)
+clients = {}
+clientnum = 0
+n = 0
+
+-- Initializing clients
+--print("Please type the number of GPS clients you would like to display.")
+--clientnum = tonumber(read())
+--for i = 1, clientnum do
+--  print("Please type the ID of client #".. i.. ".")
+--  clients[i] = read()
+--end
+
+--for i = 1, 3 do
+--    ID, message = rednet.receive("gps")
+--    for i = 1, 3 do
+--      if clients[i] == ID then
+--        n = n+1
+--      end
+--    end
+--    if n == 0 then
+--      clients[i] = ID
+--    n = 0
+--    end
+--    print("Client #".. i.. " set to ".. message)
+--end
+
+-- Main loop to receive gps locations
+while true do
+  ID, message = rednet.receive("gps")
+  if clients[1] == ID or clients[2] == ID or clients[3] == ID then
+  else
+    table.insert(clients, ID)
+    print("Client set: ".. message)
+  end
+  for i = 1, 3 do
+    if clients[i] == ID then
+      mon.setCursorPos(1,i)
+      mon.clearLine()
+      mon.write(message)
+    end
+  end
+end

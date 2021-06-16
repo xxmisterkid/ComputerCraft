@@ -1,0 +1,6 @@
+while true do
+  turtle.up()
+  turtle.forward()
+  if not turtle.detect() then break end
+end
+shell.run("control")

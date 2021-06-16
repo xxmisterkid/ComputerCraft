@@ -1,0 +1,14 @@
+while true do
+while turtle.forward() do
+turtle.forward()
+end
+turtle.turnLeft()
+turtle.forward()
+turtle.turnLeft()
+while turtle.forward() do
+turtle.forward()
+end
+turtle.turnRight()
+turtle.forward()
+turtle.turnRight()
+end

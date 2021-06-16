@@ -1,0 +1,1 @@
+local drive1 = peripheral.wrap("drive_0")

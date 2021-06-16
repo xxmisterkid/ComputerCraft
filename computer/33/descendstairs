@@ -1,0 +1,4 @@
+turtle.forward()
+while turtle.down() do
+  turtle.forward()
+end

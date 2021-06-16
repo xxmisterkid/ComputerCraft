@@ -1,0 +1,12 @@
+gps1 = peripheral.wrap("computer_13") -- GPS
+comp1 = peripheral.wrap("computer_14") -- Bert's Door
+comp2 = peripheral.wrap("computer_15") -- Locate Server
+gps2 = peripheral.wrap("computer_16") -- GPS
+gps3 = peripheral.wrap("computer_17") -- GPS
+gps4 = peripheral.wrap("computer_19") -- GPS
+gps1.turnOn()
+gps2.turnOn()
+gps3.turnOn()
+gps4.turnOn()
+comp1.turnOn()
+comp2.turnOn()

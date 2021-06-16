@@ -1,0 +1,8 @@
+while true do
+if turtle.detect() then
+turtle.turnLeft()
+else
+turtle.forward()
+turtle.turnRight()
+end
+end

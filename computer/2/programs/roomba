@@ -1,0 +1,21 @@
+rednet.open("right")
+while turtle.detect()==false do
+  turtle.forward()
+  rednet.broadcast("Turtle moved forward.")
+end
+while true do
+  if turtle.detectDown() then
+    if turtle.detect() then
+      turtle.turnLeft()
+      rednet.broadcast("Turtle turned left.")
+      else
+      turtle.forward()
+      rednet.broadcast("Turtle moved forward.")
+      turtle.turnRight()
+      rednet.broadcast("Turtle turned right.")
+      end
+    else
+    turtle.down()
+    rednet.broadcast("Turtle moved down.")
+  end
+end

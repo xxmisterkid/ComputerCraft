@@ -1,0 +1,30 @@
+local icoppercable = fs.open("basematerials/numbers/icoppercable", "r")
+local redstone = fs.open("basematerials/numbers/redstone", "r")
+local ironplate = fs.open("basematerials/numbers/ironplate", "r")
+
+if icoppercable then
+	icoppercable = math.floor(icoppercable.readLine()*6)
+	print(icoppercable, "Insulated Copper Cables")
+else
+	print("Failed to receive Insulated Copper Cables")
+end
+
+if redstone then
+	redstone = math.floor(redstone.readLine()*2)
+	print(redstone, "Redstone")
+else
+	print("Failed to receive Redstone")
+end
+
+if ironplate then
+	ironplate = math.floor(ironplate.readLine()*1)
+	print(ironplate, "Iron Plates")
+else
+	print("Failed to receive Iron Plates")
+end
+
+
+---Electric Circuit---
+--6 Insulated Copper Cables
+--2 Redstone
+--1 Iron Plate

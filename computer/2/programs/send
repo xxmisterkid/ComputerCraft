@@ -1,0 +1,8 @@
+rednet.open("back")
+print("Ready to send messages...")
+print("Hold CTRL+T to exit.\n")
+while true do
+  input = read()
+  rednet.broadcast(input)
+  print("")
+end

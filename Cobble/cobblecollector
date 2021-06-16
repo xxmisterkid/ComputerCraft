@@ -1,0 +1,11 @@
+local i = 1
+local c = 0
+while true do
+  if turtle.detectDown() then
+    turtle.digDown()
+    turtle.dropUp()
+  end
+  c=c+1
+  print("Cobble dugged: ".. c)
+  else print(i+1)
+end

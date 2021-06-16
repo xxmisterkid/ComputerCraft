@@ -1,0 +1,20 @@
+t = 0
+while true do
+  if turtle.getItemCount(1) then
+    turtle.suck()
+    turtle.select(2)
+    turtle.drop()
+    turtle.select(1)
+    i = turtle.getItemCount(1)
+    turtle.turnLeft()
+    turtle.turnLeft()
+    turtle.drop()
+    turtle.turnRight()
+    turtle.turnRight()
+    n = turtle.getItemCount(1)
+    term.setCursorPos(1,1)
+    t = t+i-n
+    print("Coal transfered: ".. t)
+  end
+  sleep(60)
+end

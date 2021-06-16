@@ -1,0 +1,24 @@
+Machine List
+	Circuit Breaker
+		Halo
+			Set up switches between all machines
+			Add status mode
+		Solar
+			Set up switches between all machines
+			Add status mode
+	Quarry
+		Server to receive and reply
+		Status sender
+	MF
+		Server to receive and reply
+		Status sender
+Organization Pipes
+	Go through all items to prioritze and resort by ID
+	Expand
+GPS System
+	Find perfect positions
+Turtle Crafter
+	Server side use shell.getRunningProgram() to see if crafting already
+	Add advanced item crafting. (turtle grabs for ex. MFE = 4 gold cables , 4 energy crystals , 1 Basic machining block. So instead turtle will grab 4*8 = 32 diamond dust , 5*8 = 40 redstone dust , and craft into 4 energy crystals then will grab 8 refined iron and craft Basic machine block then grab 4 gold cables and craft)
+Item Grabber
+	turtle grabs out of chest then crafts and outputs. If needs to craft more turtle will go back do it again

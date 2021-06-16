@@ -1,0 +1,21 @@
+local sModemSide
+for i, sSide in ipairs(rs.getSides()) do
+  if peripheral.getType(sSide) == "modem" then
+  sModemSide = sSide
+  rednet.open(sModemSide)
+  end
+end
+
+local x, y, z = gps.locate()
+while true do
+  oldx = x
+  oldy = y
+  oldz = z
+  x, y, z = gps.locate()
+  reply = os.getComputerLabel().. ": ".. x.. ", ".. y.. ", ".. z
+  if x ~= oldx or y ~= oldy or z~= oldz then
+    rednet.send(34, reply, "gps")
+    print("Sending location")
+  end
+  sleep(.5)
+end

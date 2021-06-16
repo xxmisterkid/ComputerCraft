@@ -1,0 +1,11 @@
+rednet.open("back")
+local mon = peripheral.wrap("top")
+mon.clear()
+mon.setCursorPos(1,1)
+print("Listening for messages...")
+while true do
+  id,message = rednet.receive()
+  mon.setCursorPos(1,1)
+  mon.clear()
+  mon.write(message)
+end

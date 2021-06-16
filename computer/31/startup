@@ -1,0 +1,8 @@
+shell.run("unequip left")
+shell.run("equip 1 left")
+shell.setDir("/programs")
+shell.run("/programs/label")
+shell.run("/programs/freespace")
+shell.run("bg /programs/sshserver")
+shell.run("bg /programs/ftpserver")
+shell.run("bg /programs/gpsfinder")

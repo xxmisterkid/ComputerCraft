@@ -1,0 +1,5 @@
+local fuelquantity = turtle.getItemCount(1)
+print(fuelquantity, " units of fuel in slot 1.")
+textutils.slowPrint("Refueling...")
+turtle.refuel(fuelquantity)
+print("Refueling complete!")

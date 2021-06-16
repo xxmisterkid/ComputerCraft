@@ -1,0 +1,9 @@
+term.clear()
+term.setCursorPos(1,1)
+local sizeX, sizeY = term.getSize()
+
+local ID = os.getComputerID()
+local label = os.getComputerLabel()
+print("Width: " .. sizeX .. ", Height: " .. sizeY)
+print(ID)
+print(label)

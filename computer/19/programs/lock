@@ -1,0 +1,18 @@
+rednet.open("bottom")
+print ("Locked")
+
+while true do
+    ID, unlock = rednet.receive("secret")
+  if unlock == "OtFdB" then
+    redstone.setOutput("back", true)
+    term.setCursorPos(1,1)
+    term.clear()
+    print("Unlocked")
+    sleep(1)
+    redstone.setOutput("back", false)
+    unlock = nil
+    term.setCursorPos(1,1)
+    term.clear()
+    print("Locked")
+  end
+end

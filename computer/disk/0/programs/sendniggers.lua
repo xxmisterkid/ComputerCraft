@@ -1,0 +1,5 @@
+rednet.open("back")
+rednet.broadcast("WE HATE FUCKIN NIGGERS")
+print("Broadcasting message to all clients:")
+print("WE HATE FUCKIN NIGGERS")
+rednet.close("back")
